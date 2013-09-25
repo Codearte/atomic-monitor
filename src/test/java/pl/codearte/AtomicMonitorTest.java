@@ -15,7 +15,7 @@ public class AtomicMonitorTest {
     private static Thread last;
 
     public static void main(String[] args) throws InterruptedException {
-        final Monitor[] monitors = {new YieldingMonitor(), new ParkingMonitor(), new PausingMonitor(16), new LockingMonitor(false)};
+        final Monitor[] monitors = {new PausingMonitor(), new LockingMonitor(false)};
         final Histogram histogram = new Histogram(10_000_000, 5);
 
         for (final Monitor monitor : monitors) {
